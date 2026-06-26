@@ -34,8 +34,7 @@ export function Footer() {
           {/* Columna 1 — Marca */}
           <div>
             <p
-              className="text-xs font-semibold uppercase tracking-widest mb-2"
-              style={{ color: "var(--color-olive)" }}
+              className="text-xs font-semibold uppercase tracking-widest mb-2 text-white/70"
             >
               Escuela Particular N° 240
             </p>
@@ -76,8 +75,7 @@ export function Footer() {
             <div className="flex flex-col gap-4">
               <div>
                 <p
-                  className="text-xs font-semibold uppercase tracking-wider mb-1"
-                  style={{ color: "var(--color-olive)" }}
+                  className="text-xs font-semibold uppercase tracking-wider mb-1 text-white/70"
                 >
                   Fono Contacto
                 </p>
@@ -92,8 +90,7 @@ export function Footer() {
               </div>
               <div>
                 <p
-                  className="text-xs font-semibold uppercase tracking-wider mb-1"
-                  style={{ color: "var(--color-olive)" }}
+                  className="text-xs font-semibold uppercase tracking-wider mb-1 text-white/70"
                 >
                   Correo Electrónico
                 </p>

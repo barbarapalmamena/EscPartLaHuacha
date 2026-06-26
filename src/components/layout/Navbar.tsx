@@ -58,8 +58,8 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0" id="nav-logo">
             <div
-              className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 border-2 transition-transform group-hover:scale-105"
-              style={{ borderColor: "var(--color-olive)", backgroundColor: "rgba(255,255,255,0.1)" }}
+              className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 border-2 transition-transform group-hover:scale-105 border-white/50"
+              style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
             >
               <Image
                 src="/logo.png"
@@ -72,8 +72,8 @@ export function Navbar() {
             </div>
             <div className="leading-tight hidden sm:block">
               <p
-                className="text-xs font-medium tracking-wide"
-                style={{ color: "var(--color-olive)", fontFamily: "var(--font-heading)" }}
+                className="text-xs font-medium tracking-wide text-white/70"
+                style={{ fontFamily: "var(--font-heading)" }}
               >
                 Escuela Particular N° 240
               </p>

@@ -66,9 +66,9 @@ export function Hero() {
               <span
                 className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] px-4 py-1.5 rounded"
                 style={{
-                  color: "var(--color-olive)",
-                  backgroundColor: "rgba(138,143,106,0.15)",
-                  border: "1px solid rgba(138,143,106,0.4)",
+                  color: "white",
+                  backgroundColor: "rgba(255,255,255,0.15)",
+                  border: "1px solid rgba(255,255,255,0.3)",
                   fontFamily: "var(--font-heading)",
                 }}
               >
