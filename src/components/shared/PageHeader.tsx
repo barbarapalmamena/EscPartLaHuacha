@@ -25,9 +25,11 @@ export function PageHeader({
   return (
     <section
       className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 overflow-hidden"
-      style={{ backgroundColor: "var(--color-navy)" }}
+      style={{
+        background: "linear-gradient(135deg, rgba(0,25,46,0.95) 0%, rgba(0,42,74,0.95) 100%)",
+      }}
     >
-      {/* Imagen de fondo con overlay navy */}
+      {/* Imagen de fondo con overlay navy más ligero */}
       {imageSrc && (
         <>
           <div className="absolute inset-0">
@@ -35,7 +37,7 @@ export function PageHeader({
               src={imageSrc}
               alt={imageAlt}
               fill
-              className="object-cover opacity-30"
+              className="object-cover opacity-50"
               priority
             />
           </div>
@@ -43,7 +45,7 @@ export function PageHeader({
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(0,25,46,0.85) 0%, rgba(0,25,46,0.95) 100%)",
+                "linear-gradient(to bottom, rgba(0,25,46,0.60) 0%, rgba(0,25,46,0.85) 100%)",
             }}
           />
         </>
