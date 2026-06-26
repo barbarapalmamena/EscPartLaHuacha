@@ -66,8 +66,8 @@ export function PageHeader({
           )}
 
           <h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wide leading-tight mb-4 text-white"
-            style={{ fontFamily: "var(--font-heading)" }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wide leading-tight mb-4"
+            style={{ color: "white", fontFamily: "var(--font-heading)" }}
           >
             {title}
           </h1>
