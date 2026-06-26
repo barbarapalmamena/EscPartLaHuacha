@@ -25,34 +25,27 @@ export function PageHeader({
   return (
     <section
       className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, rgba(0,25,46,0.95) 0%, rgba(0,42,74,0.95) 100%)",
-      }}
     >
-      {/* Imagen de fondo con overlay navy más ligero */}
-      {imageSrc && (
-        <>
-          <div className="absolute inset-0">
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              fill
-              className="object-cover opacity-50"
-              priority
-            />
-          </div>
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to bottom, rgba(0,25,46,0.60) 0%, rgba(0,25,46,0.85) 100%)",
-            }}
-          />
-        </>
-      )}
+      {/* Imagen de fondo con overlay idéntico al del inicio */}
+      <div className="absolute inset-0">
+        <Image
+          src={imageSrc || "/hero-background.jpg"}
+          alt={imageAlt}
+          fill
+          className="object-cover"
+          priority
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(0,25,46,0.70) 0%, rgba(0,25,46,0.40) 55%, rgba(0,25,46,0.60) 100%)",
+          }}
+        />
+      </div>
 
       {/* Contenido centrado */}
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
