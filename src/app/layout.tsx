@@ -1,19 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Poppins, Roboto, Lora } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-// Tipografías de Google Fonts
-const inter = Inter({
+// Fuentes usadas en el sitio real
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
-const outfit = Outfit({
+const roboto = Roboto({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  weight: ["300", "400", "500"],
+  variable: "--font-roboto",
+  display: "swap",
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-lora",
   display: "swap",
 });
 
@@ -61,9 +70,9 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${inter.variable} ${outfit.variable} h-full`}
+      className={`${poppins.variable} ${roboto.variable} ${lora.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col antialiased" style={{ backgroundColor: "var(--color-bg)", color: "var(--color-text)" }}>
+      <body className="min-h-full flex flex-col" style={{ backgroundColor: "var(--color-bg)", color: "var(--color-body)" }}>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

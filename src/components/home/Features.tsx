@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Heart, Cpu, Users, TreePine, Star, Globe } from "lucide-react";
 import { SectionTitle } from "@/components/shared/SectionTitle";
 
-// Los pilares educativos de la escuela
+// Los 6 pilares educativos — con la paleta real
 const features = [
   {
     id: "feature-grupos",
@@ -12,8 +12,7 @@ const features = [
     title: "Grupos Pequeños",
     description:
       "Con matrícula máxima de 23 estudiantes, cada niño recibe atención personalizada y cercana de nuestros docentes.",
-    color: "rgba(127,119,221,0.12)",
-    iconColor: "var(--color-accent)",
+    iconBg: "var(--color-olive)",
   },
   {
     id: "feature-tecnologia",
@@ -21,8 +20,7 @@ const features = [
     title: "Tecnología e Innovación",
     description:
       "Integramos tecnología y aportes de la neurociencia para fortalecer el aprendizaje de manera innovadora y efectiva.",
-    color: "rgba(175,169,236,0.12)",
-    iconColor: "var(--color-accent-soft)",
+    iconBg: "var(--color-navy)",
   },
   {
     id: "feature-inclusion",
@@ -30,8 +28,7 @@ const features = [
     title: "Educación Inclusiva",
     description:
       "Somos respetuosos de la neurodiversidad. Contamos con programa PIE para integrar a todos los estudiantes.",
-    color: "rgba(127,119,221,0.08)",
-    iconColor: "var(--color-accent)",
+    iconBg: "var(--color-salmon)",
   },
   {
     id: "feature-rural",
@@ -39,8 +36,7 @@ const features = [
     title: "Identidad Rural",
     description:
       "Valoramos nuestro entorno natural y promovemos la educación medioambiental como parte del aprendizaje cotidiano.",
-    color: "rgba(175,169,236,0.08)",
-    iconColor: "var(--color-accent-soft)",
+    iconBg: "var(--color-olive)",
   },
   {
     id: "feature-gratuita",
@@ -48,8 +44,7 @@ const features = [
     title: "Educación Gratuita",
     description:
       "Ofrecemos educación completamente gratuita para niños de 1° a 6° básico en el sector La Huacha, Frutillar.",
-    color: "rgba(127,119,221,0.12)",
-    iconColor: "var(--color-accent)",
+    iconBg: "var(--color-gold)",
   },
   {
     id: "feature-integral",
@@ -57,8 +52,7 @@ const features = [
     title: "Formación Integral",
     description:
       "Buscamos aprendizajes significativos mediante metodologías innovadoras que desarrollan habilidades para la vida.",
-    color: "rgba(175,169,236,0.12)",
-    iconColor: "var(--color-accent-soft)",
+    iconBg: "var(--color-navy)",
   },
 ];
 
@@ -71,10 +65,11 @@ export function Features() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          eyebrow="Nuestros Pilares"
+          eyebrow="Nuestros pilares"
           title="¿Por qué elegirnos?"
           description="Una educación diseñada para que cada niño descubra su potencial en un ambiente acogedor, inclusivo e innovador."
           align="center"
+          accentColor="salmon"
           className="mb-14"
         />
 
@@ -88,41 +83,38 @@ export function Features() {
                 initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
-                whileHover={{ y: -4 }}
-                className="card-surface p-6 flex flex-col gap-4 group cursor-default transition-all duration-300 hover:shadow-xl"
-                style={{ boxShadow: "var(--shadow-card)" }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                whileHover={{ y: -4, boxShadow: "var(--shadow-md)" }}
+                className="group bg-white p-6 flex flex-col gap-4 rounded-lg transition-all duration-300 cursor-default"
+                style={{
+                  border: "1px solid var(--color-border)",
+                  boxShadow: "var(--shadow-sm)",
+                }}
               >
-                {/* Ícono */}
+                {/* Ícono con fondo de color */}
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
-                  style={{
-                    backgroundColor: feature.color,
-                    border: `1px solid rgba(127,119,221,0.15)`,
-                  }}
+                  className="w-12 h-12 rounded flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
+                  style={{ backgroundColor: feature.iconBg }}
                 >
-                  <Icon className="w-5 h-5" style={{ color: feature.iconColor }} />
+                  <Icon className="w-5 h-5 text-white" />
                 </div>
 
-                {/* Texto */}
                 <div>
                   <h3
-                    className="text-base font-semibold mb-2"
-                    style={{
-                      color: "var(--color-text)",
-                      fontFamily: "var(--font-display)",
-                    }}
+                    className="text-sm font-bold uppercase tracking-wide mb-2"
+                    style={{ color: "var(--color-heading)", fontFamily: "var(--font-heading)" }}
                   >
                     {feature.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-muted)" }}>
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--color-body)" }}>
                     {feature.description}
                   </p>
                 </div>
 
-                {/* Línea de acento al hover */}
+                {/* Línea olive al hover */}
                 <div
-                  className="h-0.5 w-0 group-hover:w-8 rounded-full gradient-accent transition-all duration-300 mt-auto"
+                  className="h-0.5 w-0 group-hover:w-8 rounded-full transition-all duration-300 mt-auto"
+                  style={{ backgroundColor: "var(--color-olive)" }}
                 />
               </motion.div>
             );

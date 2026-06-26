@@ -4,21 +4,16 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 interface PageHeaderProps {
-  /** Texto pequeño sobre el título */
   eyebrow?: string;
-  /** Título principal de la página */
   title: string;
-  /** Descripción de la página */
   description?: string;
-  /** Imagen de fondo opcional */
   imageSrc?: string;
-  /** Texto alternativo de la imagen */
   imageAlt?: string;
 }
 
 /**
- * Encabezado reutilizable para subpáginas internas.
- * Muestra gradiente de fondo + imagen opcional con overlay.
+ * Encabezado para subpáginas internas.
+ * Fondo navy con imagen overlay — igual que el sitio original.
  */
 export function PageHeader({
   eyebrow,
@@ -28,8 +23,11 @@ export function PageHeader({
   imageAlt = "Banner de página",
 }: PageHeaderProps) {
   return (
-    <section className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 overflow-hidden">
-      {/* Imagen de fondo con overlay */}
+    <section
+      className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 overflow-hidden"
+      style={{ backgroundColor: "var(--color-navy)" }}
+    >
+      {/* Imagen de fondo con overlay navy */}
       {imageSrc && (
         <>
           <div className="absolute inset-0">
@@ -37,43 +35,35 @@ export function PageHeader({
               src={imageSrc}
               alt={imageAlt}
               fill
-              className="object-cover"
+              className="object-cover opacity-30"
               priority
             />
           </div>
           <div
             className="absolute inset-0"
             style={{
-              background: "linear-gradient(to bottom, rgba(22,22,26,0.85) 0%, rgba(22,22,26,0.95) 100%)",
+              background:
+                "linear-gradient(to bottom, rgba(0,25,46,0.85) 0%, rgba(0,25,46,0.95) 100%)",
             }}
           />
         </>
       )}
 
-      {/* Gradiente decorativo de fondo cuando no hay imagen */}
-      {!imageSrc && (
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "radial-gradient(ellipse at top, rgba(127, 119, 221, 0.1) 0%, transparent 70%)",
-          }}
-        />
-      )}
-
-      {/* Contenido */}
+      {/* Contenido centrado */}
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.6 }}
         >
           {eyebrow && (
             <span
-              className="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-4 px-3 py-1 rounded-full"
+              className="inline-block text-xs font-semibold uppercase tracking-[0.2em] mb-4 px-4 py-1.5 rounded"
               style={{
-                color: "var(--color-accent)",
-                backgroundColor: "rgba(127, 119, 221, 0.12)",
-                border: "1px solid rgba(127, 119, 221, 0.2)",
+                color: "var(--color-olive)",
+                backgroundColor: "rgba(138,143,106,0.15)",
+                border: "1px solid rgba(138,143,106,0.3)",
+                fontFamily: "var(--font-heading)",
               }}
             >
               {eyebrow}
@@ -81,19 +71,22 @@ export function PageHeader({
           )}
 
           <h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4"
-            style={{
-              color: "var(--color-text)",
-              fontFamily: "var(--font-display)",
-            }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wide leading-tight mb-4 text-white"
+            style={{ fontFamily: "var(--font-heading)" }}
           >
             {title}
           </h1>
 
+          {/* Línea separadora decorativa */}
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="h-0.5 w-10 rounded-full" style={{ backgroundColor: "var(--color-salmon)" }} />
+            <div className="h-0.5 w-4 rounded-full opacity-40" style={{ backgroundColor: "var(--color-salmon)" }} />
+          </div>
+
           {description && (
             <p
               className="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
-              style={{ color: "var(--color-text-muted)" }}
+              style={{ color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-body)" }}
             >
               {description}
             </p>

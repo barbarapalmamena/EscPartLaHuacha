@@ -8,34 +8,17 @@ export const metadata: Metadata = {
   description:
     "Conoce la misión, visión e historia de la Escuela Particular N° 240 La Huacha, fundada en 1953 en Frutillar, Región de Los Lagos.",
   openGraph: {
-    title: 'Misión y Visión | Escuela La Huacha',
+    title: "Misión y Visión | Escuela La Huacha",
     description:
       "Ofrecer una educación de calidad, inclusiva e integral, que valore el entorno natural y promueva prácticas de educación medioambiental.",
   },
 };
 
-// Datos históricos institucionales
 const historyFacts = [
-  {
-    icon: Clock,
-    label: "Fundación",
-    value: "04 de agosto de 1953",
-  },
-  {
-    icon: Building,
-    label: "Propietaria",
-    value: "Sra. Agustina Barría · Corp. Ed. Lomas de la Piedra",
-  },
-  {
-    icon: Target,
-    label: "Modalidad",
-    value: "Escuela rural multigrado",
-  },
-  {
-    icon: Eye,
-    label: "Matrícula autorizada",
-    value: "23 estudiantes",
-  },
+  { icon: Clock, label: "Fundación", value: "04 de agosto de 1953" },
+  { icon: Building, label: "Propietaria", value: "Corp. Ed. Lomas de la Piedra" },
+  { icon: Target, label: "Modalidad", value: "Escuela rural multigrado" },
+  { icon: Eye, label: "Matrícula autorizada", value: "23 estudiantes" },
 ];
 
 export default function MisionVisionPage() {
@@ -49,11 +32,9 @@ export default function MisionVisionPage() {
         imageAlt="Paisaje del sector La Huacha en Frutillar"
       />
 
-      <div
-        className="py-16 lg:py-24"
-        style={{ backgroundColor: "var(--color-bg)" }}
-      >
+      <div className="py-16 lg:py-24" style={{ backgroundColor: "var(--color-bg)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-20">
+
           {/* Historia */}
           <section>
             <SectionTitle
@@ -61,33 +42,33 @@ export default function MisionVisionPage() {
               title="Desde 1953 al servicio de la comunidad"
               description="Más de 70 años formando generaciones en el corazón de la Región de Los Lagos."
               align="center"
+              accentColor="salmon"
               className="mb-12"
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
               {historyFacts.map((fact) => {
                 const Icon = fact.icon;
                 return (
                   <div
                     key={fact.label}
-                    className="card-surface p-6 flex flex-col gap-3 text-center items-center"
+                    className="bg-white p-6 flex flex-col gap-3 text-center items-center rounded-lg"
+                    style={{ border: "1px solid var(--color-border)", boxShadow: "var(--shadow-sm)" }}
                   >
                     <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center gradient-accent"
+                      className="w-12 h-12 rounded flex items-center justify-center"
+                      style={{ backgroundColor: "var(--color-navy)" }}
                     >
                       <Icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
                       <p
-                        className="text-xs font-semibold uppercase tracking-wider mb-1"
-                        style={{ color: "var(--color-accent-soft)" }}
+                        className="text-xs font-bold uppercase tracking-wider mb-1"
+                        style={{ color: "var(--color-olive)", fontFamily: "var(--font-heading)" }}
                       >
                         {fact.label}
                       </p>
-                      <p
-                        className="text-sm font-medium"
-                        style={{ color: "var(--color-text)" }}
-                      >
+                      <p className="text-sm font-medium" style={{ color: "var(--color-heading)" }}>
                         {fact.value}
                       </p>
                     </div>
@@ -96,55 +77,56 @@ export default function MisionVisionPage() {
               })}
             </div>
 
-            <div className="mt-10 card-surface p-8 rounded-2xl">
-              <p className="text-base leading-relaxed" style={{ color: "var(--color-text-muted)" }}>
+            <div
+              className="bg-white p-8 rounded-lg"
+              style={{ border: "1px solid var(--color-border)" }}
+            >
+              <p className="text-sm leading-relaxed" style={{ color: "var(--color-body)" }}>
                 La Escuela Particular N° 240 &quot;La Huacha&quot; fue fundada el{" "}
-                <strong style={{ color: "var(--color-text)" }}>4 de agosto de 1953</strong> en
+                <strong style={{ color: "var(--color-heading)" }}>4 de agosto de 1953</strong> en
                 el sector La Huacha, Casma, Frutillar, Región de Los Lagos. A lo largo de sus más
                 de 70 años de historia, ha sido un pilar fundamental en la educación de las
-                comunidades rurales del sector, adaptándose constantemente a los nuevos desafíos
-                pedagógicos sin perder su esencia de cercanía y compromiso con cada familia.
+                comunidades rurales del sector.
               </p>
-              <p className="text-base leading-relaxed mt-4" style={{ color: "var(--color-text-muted)" }}>
+              <p className="text-sm leading-relaxed mt-4" style={{ color: "var(--color-body)" }}>
                 Hoy opera como escuela rural multigrado bajo la administración de la{" "}
-                <strong style={{ color: "var(--color-text)" }}>Corporación Educacional &quot;Lomas de la Piedra&quot;</strong>,
+                <strong style={{ color: "var(--color-heading)" }}>Corporación Educacional &quot;Lomas de la Piedra&quot;</strong>,
                 ofreciendo educación gratuita y de calidad para niños de 1° a 6° básico con una
                 matrícula autorizada de 23 estudiantes.
               </p>
             </div>
           </section>
 
-          {/* Misión y Visión en cards grandes */}
+          {/* Misión y Visión */}
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Misión */}
             <div
-              className="card-surface p-8 rounded-2xl relative overflow-hidden"
+              className="bg-white p-8 rounded-lg relative overflow-hidden"
               id="mision"
+              style={{ border: "1px solid var(--color-border)", boxShadow: "var(--shadow-sm)" }}
             >
-              {/* Elemento decorativo */}
               <div
-                className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-10 blur-2xl"
-                style={{ backgroundColor: "var(--color-accent)" }}
+                className="absolute top-0 left-0 w-1 h-full"
+                style={{ backgroundColor: "var(--color-olive)" }}
               />
-
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-11 h-11 rounded-xl gradient-accent flex items-center justify-center">
+              <div className="flex items-center gap-3 mb-6 pl-4">
+                <div
+                  className="w-10 h-10 rounded flex items-center justify-center"
+                  style={{ backgroundColor: "var(--color-olive)" }}
+                >
                   <Target className="w-5 h-5 text-white" />
                 </div>
                 <h2
-                  className="text-2xl font-bold"
-                  style={{ color: "var(--color-text)", fontFamily: "var(--font-display)" }}
+                  className="text-xl font-bold uppercase tracking-wide"
+                  style={{ color: "var(--color-heading)", fontFamily: "var(--font-heading)" }}
                 >
                   Misión
                 </h2>
               </div>
 
               <blockquote
-                className="text-base leading-relaxed italic border-l-2 pl-5"
-                style={{
-                  color: "var(--color-text-muted)",
-                  borderColor: "var(--color-accent)",
-                }}
+                className="text-sm leading-relaxed pl-4"
+                style={{ color: "var(--color-body)", fontFamily: "var(--font-serif)", fontStyle: "italic" }}
               >
                 &ldquo;Ofrecer una educación de calidad, inclusiva e integral, que valore el
                 entorno natural y promueva prácticas de educación medioambiental; integrando el
@@ -155,33 +137,32 @@ export default function MisionVisionPage() {
 
             {/* Visión */}
             <div
-              className="card-surface p-8 rounded-2xl relative overflow-hidden"
+              className="bg-white p-8 rounded-lg relative overflow-hidden"
               id="vision"
+              style={{ border: "1px solid var(--color-border)", boxShadow: "var(--shadow-sm)" }}
             >
-              {/* Elemento decorativo */}
               <div
-                className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-10 blur-2xl"
-                style={{ backgroundColor: "var(--color-accent-soft)" }}
+                className="absolute top-0 left-0 w-1 h-full"
+                style={{ backgroundColor: "var(--color-salmon)" }}
               />
-
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-11 h-11 rounded-xl gradient-accent flex items-center justify-center">
+              <div className="flex items-center gap-3 mb-6 pl-4">
+                <div
+                  className="w-10 h-10 rounded flex items-center justify-center"
+                  style={{ backgroundColor: "var(--color-salmon)" }}
+                >
                   <Eye className="w-5 h-5 text-white" />
                 </div>
                 <h2
-                  className="text-2xl font-bold"
-                  style={{ color: "var(--color-text)", fontFamily: "var(--font-display)" }}
+                  className="text-xl font-bold uppercase tracking-wide"
+                  style={{ color: "var(--color-heading)", fontFamily: "var(--font-heading)" }}
                 >
                   Visión
                 </h2>
               </div>
 
               <blockquote
-                className="text-base leading-relaxed italic border-l-2 pl-5"
-                style={{
-                  color: "var(--color-text-muted)",
-                  borderColor: "var(--color-accent-soft)",
-                }}
+                className="text-sm leading-relaxed pl-4"
+                style={{ color: "var(--color-body)", fontFamily: "var(--font-serif)", fontStyle: "italic" }}
               >
                 &ldquo;Somos una escuela rural multigrado que entrega una educación personalizada,
                 inclusiva y respetuosa de la neurodiversidad. Buscamos aprendizajes significativos
