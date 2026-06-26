@@ -42,12 +42,12 @@ export function Hero() {
           priority
           quality={90}
         />
-        {/* Overlay oscuro de navy sobre la imagen */}
+        {/* Overlay oscuro de navy sobre la imagen - más transparente para que no se vea tan oscuro */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(135deg, rgba(0,25,46,0.90) 0%, rgba(0,25,46,0.75) 55%, rgba(0,25,46,0.88) 100%)",
+              "linear-gradient(135deg, rgba(0,25,46,0.70) 0%, rgba(0,25,46,0.40) 55%, rgba(0,25,46,0.60) 100%)",
           }}
         />
       </div>
