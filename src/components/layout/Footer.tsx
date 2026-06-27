@@ -39,21 +39,21 @@ export function Footer() {
               Escuela Particular N° 240
             </p>
             <h3
-              className="text-lg font-bold text-white mb-4"
-              style={{ fontFamily: "var(--font-heading)" }}
+              className="text-lg font-bold mb-4"
+              style={{ color: "white", fontFamily: "var(--font-heading)" }}
             >
               La Huacha
             </h3>
             <blockquote
               className="text-sm italic mb-6 leading-relaxed"
-              style={{ color: "rgba(255,255,255,0.55)", fontFamily: "var(--font-serif)" }}
+              style={{ color: "rgba(255,255,255,0.8)", fontFamily: "var(--font-serif)" }}
             >
               &ldquo;Somos una escuela pequeña, con grandes aprendizajes.&rdquo;
             </blockquote>
             <div className="flex flex-col gap-2 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "var(--color-olive)" }} />
-                <span style={{ color: "rgba(255,255,255,0.6)" }}>
+                <span style={{ color: "rgba(255,255,255,0.8)" }}>
                   Lomas de la piedra s/n, Frutillar – X Región de Los Lagos
                 </span>
               </div>
@@ -63,12 +63,12 @@ export function Footer() {
           {/* Columna 2 — Hablemos */}
           <div>
             <h4
-              className="text-sm font-bold uppercase tracking-widest text-white mb-6"
-              style={{ fontFamily: "var(--font-heading)" }}
+              className="text-sm font-bold uppercase tracking-widest mb-6"
+              style={{ color: "white", fontFamily: "var(--font-heading)" }}
             >
               Hablemos
             </h4>
-            <p className="text-xs mb-5 leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+            <p className="text-xs mb-5 leading-relaxed" style={{ color: "rgba(255,255,255,0.8)" }}>
               Puedes contactarnos a nuestro teléfono o Email detallados a continuación y te
               responderemos a la brevedad.
             </p>
@@ -137,8 +137,8 @@ export function Footer() {
           {/* Columna 3 — Links */}
           <div>
             <h4
-              className="text-sm font-bold uppercase tracking-widest text-white mb-6"
-              style={{ fontFamily: "var(--font-heading)" }}
+              className="text-sm font-bold uppercase tracking-widest mb-6"
+              style={{ color: "white", fontFamily: "var(--font-heading)" }}
             >
               Navegación
             </h4>
@@ -149,9 +149,9 @@ export function Footer() {
                   <Link
                     href={link.href}
                     className="text-sm transition-colors duration-150"
-                    style={{ color: "rgba(255,255,255,0.6)" }}
+                    style={{ color: "rgba(255,255,255,0.8)" }}
                     onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "white")}
-                    onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.6)")}
+                    onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.8)")}
                   >
                     {link.label}
                   </Link>
@@ -168,10 +168,10 @@ export function Footer() {
         style={{ borderColor: "rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>
             Escuela Particular N° 240 La Huacha {currentYear} © — Todos los derechos reservados.
           </p>
-          <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
             Frutillar · X Región de Los Lagos · Chile
           </p>
         </div>
